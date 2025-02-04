@@ -1,7 +1,6 @@
 import pandas as pd
 
-mydataset = "https://raw.githubusercontent.com/dannypfo/performance-and-productivity/refs/heads/main/superstructure_all_dataset.csv?token=GHSAT0AAAAAAC6MGDOBBH4AL5GSXRBFWS32Z5COXVQ"
-dataset = pd.read_csv(mydataset)
+dataset = pd.read_csv("https://raw.githubusercontent.com/dannypfo/performance-and-productivity/refs/heads/main/superstructure_all_dataset.csv")
 
 import numpy as np
 dataset['Worker density'] = dataset['Worker density'].round(0)
