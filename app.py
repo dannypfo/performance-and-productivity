@@ -1,5 +1,7 @@
 import pandas as pd
-dataset = pd.read_excel("Scatterplot V5 revDM.xlsx", sheet_name="1. Levels")
+
+mydataset = "https://raw.githubusercontent.com/dannypfo/performance-and-productivity/refs/heads/main/superstructure_all_dataset.csv?token=GHSAT0AAAAAAC6MGDOBBH4AL5GSXRBFWS32Z5COXVQ"
+dataset = pd.read_csv(mydataset)
 
 import numpy as np
 dataset['Worker density'] = dataset['Worker density'].round(0)
@@ -21,6 +23,7 @@ import plotly.io as pio
 
 # Initialize Dash app
 app = dash.Dash(__name__)
+server = app.server
 
 frame_sorted = dataset.sort_values(by='Frame')
 
@@ -96,4 +99,4 @@ def generate_html(n_clicks, figure):
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8070)
+    app.run_server(debug=True)
